@@ -2,6 +2,8 @@ package sii.maroc;
 
 import static org.hamcrest.CoreMatchers.nullValue;
 
+import java.util.PrimitiveIterator.OfDouble;
+
 public class Vehicles {
 	
 	private String moteur;
@@ -50,6 +52,18 @@ public class Vehicles {
 		case CAR:
 			if (doors.equals("1 2 3 4")) {
 				result = "DOORS OK, MOVING. The CAR will consume "+distance(distance)*consomationMoteur(moteur)/100+".00 L";
+			}
+			else if(doors.equals("1 3 4")) {
+				result="DOORS KO, BLOCKED \n"+
+                        "  _\n"+
+                        " | \\\n"+
+                        " |_|";
+			}
+			else if (doors.equals("1 2 4")) {
+				result="DOORS KO, BLOCKED \n"+
+                        "  _\n"+
+                        " | |\n"+
+                        " /_|";
 			}
 			break;
 		case TRUCK:
